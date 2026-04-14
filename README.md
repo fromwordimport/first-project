@@ -39,15 +39,15 @@
 - 文件存在性检查和自动创建
 
 ## 🏗️ 项目结构
-ProductAndMarketing_Research/ 
-├── agent/ 
-│ └── LLM_image_recogniton.py # LLM 图像识别核心逻辑 
-├── tools/ 
-│ ├── jd_scraper.py # 京东爬虫核心类 
-│ ├── file_handler.py # 文件操作统一管理 
-│ ├── dimension_manager.py # 维度配置管理 
-│ ├── workflow_manager.py # 工作流管理器 │
-├── image_processor.py # 图片处理工具 
+ProductAndMarketing_Research/
+├── agent/
+│ └── LLM_image_recogniton.py # LLM 图像识别核心逻辑
+├── tools/
+│ ├── jd_scraper.py # 京东爬虫核心类
+│ ├── file_handler.py # 文件操作统一管理
+│ ├── dimension_manager.py # 维度配置管理
+│ ├── workflow_manager.py # 工作流管理器
+│ ├── image_processor.py # 图片处理工具 
 │ ├── path_tools.py # 路径工具 
 │ └── JDTools.py # 测试入口（可选） 
 ├── products_file/ # 数据存储目录 
@@ -90,9 +90,10 @@ TAVILY_API_KEY=your_tavily_api_key
 
 ### 4. 运行程序
 
-bash
+bash'''
 运行完整工作流
 python main.py
+'''
 
 程序将自动执行以下步骤：
 1. 搜索"洗碗机"商品并保存到 `products_file/洗碗机.csv`
@@ -106,19 +107,15 @@ python main.py
 
 编辑 `main.py` 第 204-208 行：
 
-python workflow.run_full_workflow(
-search_keyword="冰箱", # 修改为你需要的品类
-page=1, # 爬取页数
-output_filename="冰箱_分析结果.csv"
-)
+python
+workflow.run_full_workflow(search_keyword="冰箱", # 修改为你需要的品类 page=1, # 爬取页数 output_filename="冰箱_分析结果.csv" )
 
 ### 自定义分析维度
 
 编辑 `tools/dimension_manager.py`，在 `_load_builtin_templates` 中添加新品类：
 
-python 
-'空调': [
-{"name": "匹数", "description": "空调匹数", "type": str, "required": False}, 
+python
+'空调': [{"name": "匹数", "description": "空调匹数", "type": str, "required": False}, 
 {"name": "能效等级", "description": "能效等级", "type": str, "required": False},
 # ... 更多维度 ]
 
