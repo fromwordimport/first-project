@@ -1,0 +1,22 @@
+[project]
+name = "productandmarketing-research"
+version = "0.1.0"
+description = "京东商品文描链接爬取工具"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.3",
+    "lxml>=5.1.0",
+    "urllib3>=2.2.1",
+    "drissionpage>=4.1.1.2",
+    "langchain>=1.2.13",
+    "langchain-community>=0.4.1",
+    "langchain-openai>=1.1.12",
+    "langchain-chroma>=1.1.0",
+    "dashscope>=1.25.15",
+    "pypdf>=6.9.2",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple/"
+default = true
